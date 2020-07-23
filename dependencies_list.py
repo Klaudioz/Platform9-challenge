@@ -20,7 +20,7 @@ def main():
             # Create async loop
             loop = asyncio.get_event_loop()
             list_of_results = loop.run_until_complete(print_dependencies(list_of_dicts, target_function))
-            print(list_of_results)
+            #print(list_of_results)
     except FileNotFoundError:
             print("File not found")
     else:
@@ -32,16 +32,16 @@ async def print_dependencies(list_of_dicts, target_function):
         list_of_dicts (list): List of dictionaries with the dependencies list
         target_function (str): 
     Returns:
-        Nothing. It's used to call the function run_function which it prints the results.
+        list_of_results (list): List of strings came from run_function
     Example:
         >>> list_of_dicts({"F": {"E", "D"}, "E": {"B"},"D": {"B","C"}, "C": {"A"}, "B": {"A"}},"F")
         List of Dependencies: [{'A'}, {'B', 'C'}, {'D', 'E'}, {'F'}]
-        Run function: A
-        Run function: B
-        Run function: C
-        Run function: D
-        Run function: E
-        Run function: F
+        Result of function: A
+        Result of function: B
+        Result of function: C
+        Result of function: D
+        Result of function: E
+        Result of function: F
     Explanation:
         Step 1 - run function A
         Step 2.a - run function B - start as soon as dependent function A finishes
@@ -55,10 +55,10 @@ async def print_dependencies(list_of_dicts, target_function):
         So steps 3.a and 3.b above may run in parallel, depending upon when function C in step 2.b finishes.
 
         Because steps 2.a and 2.b can run in parallel and the same for 3.a and 3.b there are in this case 4 correct answers:
-        1.- Run function: A,B,C,D,E,F
-        2.- Run function: A,B,C,E,D,F
-        3.- Run function: A,C,B,D,E,F
-        4.- Run function: A,C,B,E,D,F
+        1.- Result of function: A,B,C,D,E,F
+        2.- Result of function: A,B,C,E,D,F
+        3.- Result of function: A,C,B,D,E,F
+        4.- Result of function: A,C,B,E,D,F
 
     """
     list_of_results = []
@@ -76,14 +76,14 @@ async def run_function(target_function):
     Args:
         target_function (str): Target function name
     Returns:
-        Nothing. It prints the name of the function in the screen
+        (str) "Result of function: " plus the name of the function
     Example:
         >>> function_name="A"
         >>> run_function(a)
-        Run function: A
+        Result of function: A
     """
-    print("Run function: " + target_function)
-    return("Run function: " + target_function)
+    print("Result of function: " + target_function)
+    return("Result of function: " + target_function)
 
 if __name__ == '__main__':
     main()

@@ -7,35 +7,35 @@
         "B": {"A"},
     },
     [
-        "Run function: A",
-        "Run function: B",
-        "Run function: C",
-        "Run function: D",
-        "Run function: E",
-        "Run function: F"
+        "Result of function: A",
+        "Result of function: B",
+        "Result of function: C",
+        "Result of function: D",
+        "Result of function: E",
+        "Result of function: F"
     ],
     [
-        "Run function: A",
-        "Run function: B",
-        "Run function: C",
-        "Run function: E",
-        "Run function: D",
-        "Run function: F"
+        "Result of function: A",
+        "Result of function: B",
+        "Result of function: C",
+        "Result of function: E",
+        "Result of function: D",
+        "Result of function: F"
     ],
     [
-        "Run function: A",
-        "Run function: C",
-        "Run function: B",
-        "Run function: D",
-        "Run function: E",
-        "Run function: F"
+        "Result of function: A",
+        "Result of function: C",
+        "Result of function: B",
+        "Result of function: D",
+        "Result of function: E",
+        "Result of function: F"
     ],
     [
-        "Run function: A",
-        "Run function: C",
-        "Run function: B",
-        "Run function: E",
-        "Run function: D",
-        "Run function: F"
+        "Result of function: A",
+        "Result of function: C",
+        "Result of function: B",
+        "Result of function: E",
+        "Result of function: D",
+        "Result of function: F"
     ]
 ]
