@@ -1,0 +1,41 @@
+[
+    {
+        "F": {"E", "D"},
+        "E": {"B"},
+        "D": {"B","C"},
+        "C": {"A"},
+        "B": {"A"},
+    },
+    [
+        "Run function: A",
+        "Run function: B",
+        "Run function: C",
+        "Run function: D",
+        "Run function: E",
+        "Run function: F"
+    ],
+    [
+        "Run function: A",
+        "Run function: B",
+        "Run function: C",
+        "Run function: E",
+        "Run function: D",
+        "Run function: F"
+    ],
+    [
+        "Run function: A",
+        "Run function: C",
+        "Run function: B",
+        "Run function: D",
+        "Run function: E",
+        "Run function: F"
+    ],
+    [
+        "Run function: A",
+        "Run function: C",
+        "Run function: B",
+        "Run function: E",
+        "Run function: D",
+        "Run function: F"
+    ]
+]

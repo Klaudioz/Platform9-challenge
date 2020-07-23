@@ -1,4 +1,3 @@
-import json
 import ast
 import asyncio
 from toposort import toposort, toposort_flatten
@@ -20,7 +19,8 @@ def main():
             print("List of Dependencies: " + str(list_of_dicts))
             # Create async loop
             loop = asyncio.get_event_loop()
-            loop.run_until_complete(print_dependencies(list_of_dicts, target_function))
+            list_of_results = loop.run_until_complete(print_dependencies(list_of_dicts, target_function))
+            print(list_of_results)
     except FileNotFoundError:
             print("File not found")
     else:
@@ -61,13 +61,15 @@ async def print_dependencies(list_of_dicts, target_function):
         4.- Run function: A,C,B,E,D,F
 
     """
+    list_of_results = []
     for dict in list_of_dicts:
         for elem in dict:
             # This part can be done asynchronously
-            await run_function(elem)
+            list_of_results.append(await run_function(elem))
         if dict.__contains__(target_function):
             # No need to continue if it reaches the target_function
             break
+    return list_of_results
             
 async def run_function(target_function):
     """Prints the name of the target_function
@@ -81,6 +83,7 @@ async def run_function(target_function):
         Run function: A
     """
     print("Run function: " + target_function)
+    return("Run function: " + target_function)
 
 if __name__ == '__main__':
     main()
